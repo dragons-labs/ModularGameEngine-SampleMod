@@ -1,0 +1,51 @@
+{
+	"macroblocks" : {
+		"cull_none_macroblock" : {
+			"cull_mode" : "none"
+		}
+	},
+	"samplers" : {
+		"wrap_uvw_sampler" : {
+			"u" : "wrap", "v" : "wrap", "w" : "wrap"
+		}
+	},
+	"pbs" : {
+		"dragon_skin" : {
+			"macroblock" : "cull_none_macroblock",
+			"two_side"   : true,
+			
+			"diffuse" : {
+				"sampler" : "wrap_uvw_sampler",
+				"texture" : "Dragon/dragon_clr.jpg"
+			},
+			"specular" : {
+				"sampler" : "wrap_uvw_sampler",
+				"texture" : "Dragon/dragon_clr.jpg"
+			},
+			"normal" : {
+				"sampler" : "wrap_uvw_sampler",
+				"texture" : "Dragon/dragon_ntg.jpg"
+			}
+		},
+		"dragon_metal" : {
+			"macroblock" : "cull_none_macroblock",
+			"two_side"   : true,
+			
+			"diffuse" : {
+				"sampler" : "wrap_uvw_sampler",
+				"texture" : "Dragon/dragon_clr.jpg"
+			},
+			"specular" : {
+				"sampler" : "wrap_uvw_sampler",
+				"texture" : "Dragon/dragon_clr.jpg"
+			},
+			"metallness" : {
+				"value" : 0.6
+			},
+			"normal" : {
+				"sampler" : "wrap_uvw_sampler",
+				"texture" : "Dragon/dragon_ntg.jpg"
+			}
+		}
+	}
+}

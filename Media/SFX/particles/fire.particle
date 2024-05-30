@@ -1,0 +1,24 @@
+particle_system SFX/Fire {
+	// based on TRPlayer/Torch by epopov from https://forums.ogre3d.org/viewtopic.php?p=52675#p52675
+	
+	material          SFX/FireFlare
+	particle_width    25
+	particle_height   35
+	cull_each         false
+	quota             50
+	billboard_type    point
+	
+	affector Scaler {
+		rate  -200
+	}
+	
+	emitter Point {
+		angle               18
+		emission_rate       25
+		time_to_live_min    0.1
+		time_to_live_max    0.1
+		direction           0  1  0
+		velocity_min        10
+		velocity_max        70
+	}
+}

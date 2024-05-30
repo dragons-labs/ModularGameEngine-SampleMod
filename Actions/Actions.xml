@@ -1,0 +1,45 @@
+<Actions>
+	<Action name="Ladder.install" type="RUN_SCRIPT" needMask="TARGET_ACTOR" />
+	<Action name="Ladder.moveAndInstall" type="RUN_SCRIPT" needMask="TARGET_ACTOR" />
+	
+	<Action name="GOTO"              type="MOVE"       needMask="POINT" />
+	
+	<Action name="setControllable"   type="RUN_SCRIPT" needMask="NONE" />
+	<Action name="unsetControllable" type="RUN_SCRIPT" needMask="NONE" />
+	<Action name="makeOwnerOfCamera" type="RUN_SCRIPT" needMask="NONE" />
+	
+	<Action name="lightControl" type="RUN_SCRIPT RUN_ON_PAUSE" needMask="NONE">
+		<MenuText lang="en">lights</MenuText>
+		<MenuText lang="pl">światła</MenuText>
+		<SubAction mode="100">
+			<MenuText lang="en">group 0</MenuText>
+			<MenuText lang="pl">grupa 0</MenuText>
+		</SubAction>
+		<SubAction mode="101">
+			<MenuText lang="en">group 1</MenuText>
+			<MenuText lang="pl">grupa 1</MenuText>
+		</SubAction>
+		<SubAction mode="0">
+			<MenuText lang="en">all off</MenuText>
+			<MenuText lang="pl">wyłącz wszystkie</MenuText>
+		</SubAction>
+		<SubAction mode="1">
+			<MenuText lang="en">all on</MenuText>
+			<MenuText lang="pl">włącz wszystkie</MenuText>
+		</SubAction>
+	</Action>
+	<Action name="soundControl" type="RUN_SCRIPT RUN_ON_PAUSE ADD_AT_FRONT" needMask="NONE">
+		<SubAction mode="1">
+			<MenuText lang="en">on</MenuText>
+			<MenuText lang="pl">włącz</MenuText>
+		</SubAction>
+		<SubAction mode="2">
+			<MenuText lang="en">auto</MenuText>
+			<MenuText lang="pl">auto</MenuText>
+		</SubAction>
+		<SubAction mode="0">
+			<MenuText lang="en">off</MenuText>
+			<MenuText lang="pl">wyłącz</MenuText>
+		</SubAction>
+	</Action>
+</Actions>

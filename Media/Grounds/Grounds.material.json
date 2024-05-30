@@ -1,0 +1,12 @@
+{
+	"pbs" : {
+		"ground_01" : {
+			"diffuse" : {
+				"texture" : "ground_01.svg.jpg"
+			},
+			"specular" : {
+				"texture" : "ground_01.svg.jpg"
+			}
+		}
+	}
+}

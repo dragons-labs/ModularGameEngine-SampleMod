@@ -1,0 +1,4 @@
+Media/Video/bunny.ogv
+	Source:  https://commons.wikimedia.org/wiki/File:Big_Buck_Bunny_Trailer_400p.ogv
+	Author:  Blender Foundation (www.bigbuckbunny.org)
+	Licence: CC BY 3.0

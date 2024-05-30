@@ -1,0 +1,18 @@
+hlms SFX/Flare unlit {
+     scene_blend add
+     depth_write off
+     diffuse_map flare.png
+}
+
+hlms SFX/FireFlare unlit {
+     scene_blend add
+     depth_write off
+     diffuse_map flare2.png
+}
+
+hlms SFX/Smoke unlit {
+	scene_blend alpha_blend
+	depth_write off
+	diffuse_map smoke.png
+	tex_address_mode clamp
+}

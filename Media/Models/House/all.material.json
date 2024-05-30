@@ -1,0 +1,12 @@
+{
+	"pbs" : {
+		"houses_1/material_1" : {
+			"diffuse" : {
+				"texture" : "House/house_a_bake.png"
+			},
+			"specular" : {
+				"texture" : "House/house_a_bake.png"
+			}
+		}
+	}
+}

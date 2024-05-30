@@ -1,0 +1,3 @@
+Media/Images/*
+	Author:  Robert Paciorek, MGE Project
+	Licence: MIT

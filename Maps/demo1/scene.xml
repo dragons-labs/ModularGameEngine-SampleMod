@@ -1,0 +1,280 @@
+<scene>
+	<sceneManager name="mission_SM" useDecals="true">
+		<Forward3D width="8" height="8" numSlices="24" lightsPerCell="64" decalsPerCell="8" cubemapProbesPerCel="4" minDistance="0.3" maxDistance="80"/>
+		<Decals textureWidth="1024" textureHeight="1024" numSlices="16" numMmipmaps="10" colorTexFormat="PFG_RGBA8_UNORM_SRGB" normalTexFormat="PFG_RG8_SNORM">
+			<Texture type="emissive" file="CircleGreen.png" name="DecalMarker"/>
+			<Texture type="diffuse" file="TestNumbers.png" name="DecalMarker"/>
+			<!--<Texture type="normals" file="TestNumbers.png" name="DecalMarker"/>-->
+			<!--<Texture type="diffuse" file="Family_House_Collection_1.png" />-->
+		</Decals>
+		<Shadow farDistance="30" />
+	</sceneManager>
+	<resources>
+		<ResourcesConfigFile>resources/SampleMod/Maps/demo1/resources.xml</ResourcesConfigFile>
+		<!--<ResourcesConfigFile>resources/OpenEmergencySimulator/standard_maps_resources.xml</ResourcesConfigFile>-->
+	</resources>
+	<environment>
+		<ambientLight>
+			<upperHemisphere r="0.45" g="0.35" b="0.35" a="1"/>
+			<lowerHemisphere r="0.4" g="0.3" b="0.3" a="1"/>
+		</ambientLight>
+		<!--<colourAmbient r="0.4" g="0.4" b="0.4" a="1"/>-->
+		<sky material="SkyPostprocessViolentdays"/>
+		<!--
+			<skyBox active="true" material="SkyBox/Space" distance="5000" drawFirst="true" />
+			<skyDome active="true" material="SkyDome/Water" curvature="10" tiling="8" distance="5000" drawFirst="true" />
+			<skyPlane active="true" material="SkyPlane/Space" planeX="0" planeY="-1" planeZ="0" planeD="8000" scale="30000" tiling="9" drawFirst="true" bow="0" />
+		-->
+	</environment>
+	<worldSize>
+		<min x="-1000" y="-100" z="-1000"/>
+		<max x="1000" y="100" z="1000"/>
+		<gravity x="0" y="-9.807" z="0"/>
+		<searchGrid size=".95" freeSpeceSearchLimit="30" pathFinderLimit="100000"/>
+	</worldSize>
+	<nodes>
+		<node name="EntryPoint4Cars">
+			<position x="-9.5" y="3" z="48"/>
+		</node>
+		<!-- ground plane -->
+		<node name="ground1">
+			<position x="-29.662590" y="0.000000" z="30.000025"/>
+			<scale x="88.000000" y="1.000000" z="88.000000"/>
+			<rotation w="0.707107" x="0.000000" y="0.707107" z="0.000000"/>
+			<item meshFile="Plane_1x1.mesh" name="ground1" isGround="true" materialName="ScreenDefaultPbs1">
+				<physics physicsMode="full" shapeMode="trimesh" />
+				<!-- ground for "Car" components MUST be "full" physicsMode -->
+			</item>
+		</node>
+		<!-- center map marker + sound and light demo -->
+		<node name="CenterMarker">
+			<position x="0" y="0" z="0"/>
+			<scale x="2.000000" y="2.000000" z="2.000000"/>
+			<item meshFile="Axis.mesh"/>
+			<!--<sound name="Sound1" loop="false" filename="fire_alarm.ogg"/>-->
+			<node>
+				<position x="0" y="10" z="0"/>
+				<!-- light do not have own position, so must set this in light owner node -->
+				<light type="spot" powerScale="6" castShadows="true">
+					<direction x="0.3" y="-1" z="0"/>
+					<!-- light direction affect node orientation, so spotlight must be attach to subnode -->
+					<colourDiffuse r="0" g="0.8" b="0"/>
+					<colourSpecular r="0" g="0.8" b="0"/>
+					<spotlightRange inner="25" outer="60" falloff="0.8"/>
+					<lightAttenuation radius="20" lumThreshold="0.01"/>
+				</light>
+			</node>
+			<node>
+				<position x="0" y="1" z="0"/>
+				<light type="point" powerScale="3.3" castShadows="true">
+					<colourDiffuse r="0.8" g="0" b="0"/>
+					<colourSpecular r="0.8" g="0" b="0"/>
+					<lightAttenuation radius="20" lumThreshold="0.01"/>
+				</light>
+			</node>
+		</node>
+		<!-- animation on old and new mesh -->
+		<node name="crane01">
+			<position x="5.521969" y="0.000000" z="25.104538"/>
+			<scale x="2" y="2" z="2"/>
+			<rotation qw="-0.316974" qx="0.000000" qy="0.948434" qz="0.000000"/>
+			<entity meshFile="Objects/Crane_1.mesh" name="crane_1">
+				<animations>
+					<animationState animationName="left" loop="0" startTime="0.5"/>
+					<!--<animationState animationName="closer" loop="0"/>
+					<animationState animationName="down" loop="0"/>-->
+				</animations>
+			</entity>
+		</node>
+		<node name="crane02">
+			<position x="4.295916" y="0.000000" z="5.315552"/>
+			<scale x="2" y="2" z="2"/>
+			<rotation qw="0.918444" qx="0.000000" qy="-0.395550" qz="0.000000"/>
+			<item meshFile="Objects/Crane_2.mesh" name="crane_2">
+				<animations>
+					<!--<animationState animationName="crane_2-rotation" loop="false" timePosition="5"/>-->
+					<animationState enabled="true" animationName="crane_2-outreach" loop="2" speed="-0.2" startTime="0.3" endTime="0.1"/>
+					<!--<animationState animationName="crane_2-lifting"  loop="false"/>-->
+				</animations>
+			</item>
+		</node>
+		<!-- some bilboards meshes for show rendering to texture features -->
+		<node name="BilboardScreen01">
+			<position x="-12.388206" y="6.483786" z="41.907612"/>
+			<rotation qw="0.707107" qx="0.000000" qy="-0.707107" qz="0.000000"/>
+			<item meshFile="Objects/Billboard.mesh"/>
+			<!-- interactive texture:
+				1) requires mesh with UV cooridates
+				2) requires the same name for <node/> and <item/> or for <node/> and <entity/> (specified in nodeName attribute of interactive texture object configuration)
+				3) repleces material for the whole mesh (for all submeshes), so the simplest method is use sepate mesh for display
+			-->
+			<item meshFile="Objects/BillboardScreen.mesh" name="BilboardScreen01"/>
+			<scale x="1.000000" y="1.000000" z="1.000000"/>
+		</node>
+		<node name="BilboardScreen02">
+			<position x="-24.093784" y="6.620898" z="0.177336"/>
+			<rotation qw="0.990216" qx="0.000000" qy="-0.139543" qz="0.000000"/>
+			<item meshFile="Objects/Billboard.mesh"/>
+			<item meshFile="Objects/BillboardScreen.mesh" name="BilboardScreen02" materialName="ScreenDefault2"/>
+		</node>
+		<node name="BilboardScreen03">
+			<position x="-11.092775" y="6.953693" z="6.578351"/>
+			<rotation qw="0.921061" qx="0.000000" qy="-0.389418" qz="0.000000"/>
+			<item meshFile="Objects/Billboard.mesh"/>
+			<entity meshFile="Objects/BillboardScreenV1.mesh" name="BilboardScreen03" materialName="ScreenDefault2"/>
+		</node>
+		<node name="BilboardScreen04">
+			<position x="-69.259033" y="6.620898" z="3.729558"/>
+			<rotation qw="0.990216" qx="0.000000" qy="-0.139543" qz="0.000000"/>
+			<item meshFile="Objects/Billboard.mesh"/>
+			<item meshFile="Objects/BillboardScreen.mesh" name="BilboardScreen04" materialName="ScreenDefault1"/>
+		</node>
+		<!-- some houses meshes for testing path finding -->
+		<!-- node and item names are not required, but are usful for debuging -->
+		<node name="house01">
+			<position x="-37.905308" y="0.000000" z="24.819147"/>
+			<rotation qw="-0.000000" qx="-0.000000" qy="1.000000" qz="-0.000000"/>
+			<item meshFile="House/house1.mesh" name="house01">
+				<physics physicsMode="collision" shapeMode="box"/>
+			</item>
+		</node>
+		<node name="house02">
+			<position x="-54.230057" y="0.000000" z="24.816217"/>
+			<rotation qw="-0.000000" qx="-0.000000" qy="1.000000" qz="-0.000000"/>
+			<item meshFile="House/house1.mesh" name="house02">
+				<physics physicsMode="full" mass="30" shapeMode="box"/>
+			</item>
+		</node>
+		<node name="house03">
+			<position x="-54.327389" y="0.000000" z="2.555435"/>
+			<rotation qw="1" qx="0" qy="0" qz="0"/>
+			<item meshFile="House/house1.mesh" name="house03"/>
+		</node>
+		<node name="house04">
+			<position x="-37.780273" y="0.000000" z="2.288307"/>
+			<rotation qw="1" qx="0" qy="0" qz="0"/>
+			<item meshFile="House/house1.mesh" name="house04"/>
+		</node>
+		<node name="house06">
+			<position x="-9.558850" y="0.000000" z="25.999783"/>
+			<rotation qw="0.710914" qx="0.000000" qy="-0.703279" qz="0.000000"/>
+			<item meshFile="House/house1.mesh" name="house06"/>
+		</node>
+		<node name="house07">
+			<position x="-35.554424" y="0.000000" z="40.104103"/>
+			<rotation qw="0.707107" qx="0.000000" qy="0.707107" qz="0.000000"/>
+			<item meshFile="House/house1.mesh" name="house07"/>
+			<actor>
+				<Component classID="SelectableObject">
+					<SelectionMask>IS_ACTION_TARGET</SelectionMask>
+				</Component>
+			</actor>
+		</node>
+		<!-- trigger test -->
+		<node name="trigger1">
+			<position x="-38.403454" y="0.937522" z="13.398291"/>
+			<rotation qw="1" qx="0" qy="0" qz="0"/>
+			<scale x="0.719100" y="1.000000" z="16.989180"/>
+			<item meshFile="Cube_1x1x1.mesh" name="trigger1"/>
+			<actor>
+				<Component classID="Trigger">
+					<TriggerType>RUN_SCRIPT</TriggerType>
+					<ScriptName>testTrigger</ScriptName>
+				</Component>
+			</actor>
+		</node>
+		<node name="collision_fake_trigger1">
+			<position x="-22.156771" y="0.937522" z="6.361084"/>
+			<rotation qw="0.757014" qx="0.000000" qy="0.653398" qz="0.000000"/>
+			<scale x="0.719101" y="1.000000" z="26.356878"/>
+			<item meshFile="Cube_1x1x1.mesh" name="fake_trigger1" visibilityFlag="TRIGGERS"/>
+		</node>
+		<!-- actor examples -->
+		<node name="test_vehicle">
+			<position x="-32.193089" y="0.000000" z="14.919490"/>
+			<rotation qw="-0.708003" qx="0.000000" qy="0.706209" qz="-0.000000"/>
+			<actor>
+				<Prototype group="ActorsConfig" file="Actors.xml" name="PoliceCar_A"/>
+				<Component classID="Light">
+					<sfx num="1" size="8" material="SFX/Flare"/>
+					<!-- top blue rotating (group 1) -->
+					<light type="spot" powerScale="6" castShadows="true">
+						<colour r="0" g="0" b="1"/>
+						<direction x="0.3" y="-0.2" z="1"/>
+						<spotlightRange inner="45" outer="100" falloff="0.8"/>
+						<lightAttenuation radius="10" lumThreshold="0.01"/>
+						<position x="0" y="3.300000" z="0"/>
+						<scale x="0.2" y="1" z="0.7"/>
+						<animation type="rotating" group="1" speed="0.3"/>
+						<item meshFile="SampleLamp.mesh" newNode="true"/> <!-- newNode="true" because we use scale -->
+					</light>
+					<light type="spot" powerScale="6" castShadows="true">
+						<colour r="0" g="0" b="1"/>
+						<direction x="0.3" y="-0.2" z="-1"/>
+						<spotlightRange inner="45" outer="100" falloff="0.8"/>
+						<lightAttenuation radius="10" lumThreshold="0.01"/>
+						<position x="0" y="3.300000" z="0"/>
+						<scale x="1" y="3" z="1"/>
+						<animation type="rotating" group="1" speed="0.3"/>
+					</light>
+					
+					<!-- front red stroboscope (group 1) -->
+					<light type="point" powerScale="5" castShadows="true">
+						<colour r="1.0" g="0" b="0"/>
+						<lightAttenuation radius="10" lumThreshold="0.01"/>
+						<position x="0" y="0.900000" z="-3"/>
+						<animation type="flashingRandom" group="1" speed="3.0" switchOn="0.7" randomLimit="0.2" randomSetVal="0.4" randomSetLimit="2"/>
+						<sfxColour r="1.0" g="0.0" b="0"/>
+						<item meshFile="SampleLamp.mesh" newNode="false"/>
+					</light>
+					
+					<!-- back yellow bar (group 0) -->
+					<light type="point" powerScale="2" castShadows="true">
+						<colour r="1.0" g="1.0" b="0"/>
+						<lightAttenuation radius="5" lumThreshold="0.01"/>
+						<position x="-.8" y="3.300000" z="7"/>
+						<animation type="flashing" speed="0.2" switchOn="0.8" switchOff="1.0"/>
+						<animation type="flashing" speed="0.2" switchOn="0.0" switchOff="0.1"/>
+						<sfxColour r="1" g="1.0" b="0"/>
+					</light>
+					<light type="point" powerScale="2" castShadows="true">
+						<colour r="1.0" g="1.0" b="0"/>
+						<lightAttenuation radius="5" lumThreshold="0.01"/>
+						<position x="-.4" y="3.300000" z="7"/>
+						<animation type="flashing" speed="0.2" switchOn="0.6" switchOff="0.8"/>
+						<sfxColour r="1" g="1.0" b="0"/>
+					</light>
+					<light type="point" powerScale="2" castShadows="true">
+						<colour r="1.0" g="1.0" b="0"/>
+						<lightAttenuation radius="5" lumThreshold="0.01"/>
+						<position x="0" y="3.300000" z="7"/>
+						<animation type="flashing" speed="0.2" switchOn="0.4" switchOff="0.7"/>
+						<sfxColour r="1" g="1.0" b="0"/>
+					</light>
+					<light type="point" powerScale="2" castShadows="true">
+						<colour r="1.0" g="1.0" b="0"/>
+						<lightAttenuation radius="5" lumThreshold="0.01"/>
+						<position x=".4" y="3.300000" z="7"/>
+						<animation type="flashing" speed="0.2" switchOn="0.2" switchOff="0.5"/>
+						<sfxColour r="1.0" g="1.0" b="0"/>
+					</light>
+					<light type="point" powerScale="2" castShadows="true">
+						<colour r="1.0" g="1.0" b="0"/>
+						<lightAttenuation radius="5" lumThreshold="0.01"/>
+						<position x=".8" y="3.300000" z="7"/>
+						<animation type="flashing" speed="0.2" switchOn="0.0" switchOff="0.3"/>
+						<sfxColour r="1.0" g="1.0" b="0"/>
+					</light>
+				</Component>
+			</actor>
+		</node>
+		<node name="jeep02">
+			<position x="-20.0" y="5" z="20.5"/>
+			<scale x="1" y="1" z="1"/>
+			<actor>
+				<Prototype group="ActorsConfig" file="Cars.xml" name="JeepCar"/>
+			</actor>
+		</node>
+	</nodes>
+</scene>
+

@@ -1,0 +1,35 @@
+<Resources>
+	<Group name="MapsConfigs">
+		<Entry type="dir" recursionMode="asSubPaths" path="resources/SampleMod/Maps" />
+	</Group>
+	
+	<Group name="WorldMaps">
+		<Entry type="dir" path="resources/SampleMod/WorldMaps" />
+	</Group>
+	
+	<Group name="ActorsConfig">
+		<Entry type="dir" recursionMode="asSubPaths" path="resources/SampleMod/Actors" />
+	</Group>
+	
+	<Group name="ActionsConfig">
+		<Entry type="dir" path="resources/SampleMod/Actions" />
+	</Group>
+	
+	<Group name="MinimapsImages">
+		<Entry type="dir" recursionMode="asSubPaths" path="resources/SampleMod/Media/Images" />
+	</Group>
+	
+	<Group name="UnitsImages">
+		<Entry type="dir" recursionMode="asSubPaths" path="resources/SampleMod/Media/Images" />
+	</Group>
+	
+	<Group name="Map_Scene">
+		<Entry type="dir" recursionMode="asFiles" path="resources/SampleMod/Media/Sound" />
+		<Entry type="dir" recursionMode="asFiles" path="resources/SampleMod/Media/SFX" />
+		<Entry type="dir" recursionMode="asSubPaths" path="resources/SampleMod/Media/Models" />
+	</Group>
+	
+	<Group name="Video">
+		<Entry type="dir" path="resources/SampleMod/Media/Video" />
+	</Group>
+</Resources>

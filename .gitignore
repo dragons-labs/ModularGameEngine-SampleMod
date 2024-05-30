@@ -1,0 +1,6 @@
+/build
+*.swp
+*.kate-swp
+*.blend1
+.gdb_history
+

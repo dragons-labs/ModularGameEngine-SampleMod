@@ -1,0 +1,21 @@
+Media/Materials/Grounds/src/road_asphalt_small.png
+	Source:  http://opengameart.org/content/uberpack-1
+	Author:  Christian Femmer aka Duion
+	Licence: Creative Commons Attribution 3.0 Unported
+	Comment: modify and convert by Robert Paciorek for MGE Project
+
+Media/Materials/Grounds/src/ground_grass_gen_*.png
+	Source:  https://opengameart.org/content/synthetic-grass-texture-pack
+	Author:  para
+	Licence: Creative Commons Zero / Public Domain
+
+Media/Materials/Grounds/*.jpg
+	Author:  Robert Paciorek, MGE Project
+	Author:  Christian Femmer aka Duion
+	Licence: Creative Commons Attribution 3.0 Unported
+	Comment: use textures from http://opengameart.org/content/uberpack-1
+
+Media/Materials/Grounds/src/*.svg
+Media/Materials/Grounds/Grounds.material.json
+	Author:  Robert Paciorek, MGE Project
+	Licence: MIT

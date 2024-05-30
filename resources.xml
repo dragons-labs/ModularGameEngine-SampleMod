@@ -1,0 +1,27 @@
+<Resources>
+	<Group name="MGE_MapsMainConfigs">
+		<Entry type="dir" path="resources/SampleMod/Maps" />
+	</Group>
+	
+	<!-- This file is also read when a different map is loaded, so can be used to override settings from other mod or default game.
+	     To do this must define resource group with the same name as used in map from other mod or default game with doInit="false" attribute.
+	     And define new (additional) resource path containing files with the same name as in other mod or default game. For example:
+	
+	<Group doInit="false" name="ActionsConfig">
+		<Entry type="dir" recursionMode="asFiles" path="resources/SampleMod/Actions" />
+	</Group>
+	
+	     It's possible override only some XML configs (as actors, actions, world map).
+	     Override for this config is based on priority attribute in its root node. For example:
+	     Action define from file "aaa.xml" in group "BBB" with root node:
+	          <Actions priority="15">
+	     will be override by other file "aaa.xml" in group "BBB" with root node:
+	          <Actions priority="25">
+	     but will NOT be override by file "aaa.xml" in group "BBB" with root node:
+	          <Actions priority="5">
+	     nor by any file with not matching name or group name.
+	     Override other resources (e.g. meshesh, textures) could not work (win last loaded path).
+	
+	     For more info see "Game Modding" page in MGE documentation.
+	-->
+</Resources>

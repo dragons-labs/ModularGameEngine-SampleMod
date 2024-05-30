@@ -1,0 +1,53 @@
+Media/Models/Dragon/dragon.mesh
+Media/Models/Dragon/dragon_*.jpg
+Media/Models/Dragon/src/*
+	Source:  http://www.blendswap.com/blends/view/73418
+	Author:  miklosizoltan
+	Licence: Creative Commons Zero (Public Domain)
+
+Media/Models/Dragon/dragon.material.json
+	Author:  Robert Paciorek, MGE Project
+	Licence: MIT
+
+
+Media/Models/House/*.mesh
+Media/Models/House/*.png
+Media/Models/House/src/*
+	Source:  http://www.blendswap.com/blends/view/92125
+	Author:  TastyFish
+	Licence: Creative Commons Zero 1.0
+	Comment: modify and convert by Robert Paciorek for MGE Project
+
+Media/Models/House/all.material.json
+	Author:  Robert Paciorek, MGE Project
+	Licence: MIT
+
+
+Media/Models/Objects/Billboard*.mesh
+Media/Models/Objects/src/billboard.blend
+	Source:  http://www.blendswap.com/blends/view/68055
+	Author:  RegusTtef
+	Licence: Creative Commons Attribution 3.0
+	Comment: modify and convert by Robert Paciorek for MGE Project
+
+Media/Models/Objects/Crane*
+Media/Models/Objects/src/crane.blend
+	Source:  http://www.blendswap.com/blends/view/19529
+	Author:  AlvaroPerdigao
+	Licence: Creative Commons Zero 1.0
+	Comment: modify and convert by Robert Paciorek for MGE Project
+
+
+Media/Models/Vehicles/Hummer.mesh
+Media/Models/Vehicles/src/HMMWV_rrp.blend
+	Source:  http://www.blendswap.com/blends/view/81211
+	Author:  shadewar (Shadman Tajwar)
+	Licence: Creative Commons Attribution 3.0
+	Comment: modify and convert by Robert Paciorek for MGE Project
+	
+Media/Models/Vehicles/Jeep*.mesh
+Media/Models/Vehicles/src/JeepWrangler_rrp.blend
+	Source:  http://www.blendswap.com/blends/view/17369   http://www.blendswap.com/blends/vehicles/jurassic-park-jeep-wrangler-29/
+	Author:  Carlos Eduardo
+	Licence: Creative Commons License Creative Commons  Zero Mark 1.0
+	Comment: modify and convert by Robert Paciorek for MGE Project

@@ -1,0 +1,213 @@
+<Mission>
+	<!-- define visual map information: name, description and loading screen image -->
+	<Name>SampleMod: MGE Demo Map</Name>
+	
+	<Description>Engine demo and tests.</Description>
+	<Description lang="pl">Demonstracje oraz testy Dragon's Game Engine.</Description>
+	
+	<LoadScreen file="LoadingDemoMap.png" group="MapsLoadingScreens">
+		<!-- LoadScreen define own resources, because is showed before loaded resources from FIRST <SceneFile/> tag -->
+		<Entry type="dir" path="resources/SampleMod/Media/Images" />
+	</LoadScreen>
+	
+	<!--
+	after show LoadScreen engine:
+	  * clear old scene (including scene manager)
+	  * read file added via FIRST <SceneFile/> tag for:
+	     * create new scene manager
+	     * load all resources definde in that file
+	  * parsing this file in order xml nodes (but ignoring <Name/>, <Description/>, <LoadScreen/>)
+	-->
+	
+	<!-- define actions prototypes -->
+	<Actions>
+		<File group="ActionsConfig" name="Actions.xml" />
+		<File group="ActionsConfig" name="DemoActions.xml" />
+	</Actions>
+	
+	<Bullet/>
+	
+	<!-- run Python scripts – these scripts will be executed when this tag is parsed (so before next tags, so before loading scene objects) -->
+	<ConfigScripts>
+		<!-- run all default python scripts -->
+		<Group name="MGE_DefaultPythonScripts"  filter="*.py" />
+		<!-- run actions realated python scripts from this mod -->
+		<Group name="ActionsConfig"             filter="*.py" />
+		<!-- run this map specific actions / dialogs scripts -->
+		<File group="MapsConfigs"        name="demo1/dialogs.py" />
+	</ConfigScripts>
+	
+	<!-- define Python scripts to run after load – these scripts will be executed after parsed whole config file and (when save file is loaded) after restored values from save file -->
+	<SceneScripts>
+		<File group="MGE_PythonScripts"  name="engine_debug.py" />
+		<File group="MapsConfigs"        name="demo1/engine_demos.py" />
+	</SceneScripts>
+	
+	<!-- loading scene from .scene.xml file and some values from pseudo-save (state) file -->
+	<!-- scene will be created after parsing previous xml nodes, but scene manager and resources defined in file added via FIRST <SceneFile/> tag have been loaded earlier -->
+	<SceneFile path="resources/SampleMod/Maps/demo1/scene.xml" />
+	<StateFile group="MapsConfigs" name="demo1/state.xml" />
+	
+	<OnScreenInfo>
+		<ShowOnScreenInfoOnPause />
+	</OnScreenInfo>
+	
+	<MiniMap>
+		<BaseWin name="WorldInfoWindow" type="TabsWindow" layoutFile="WorldInfoWindow.layout" />
+		<File group="MinimapsImages" name="minimap_test2.png" />
+		<WorldPosition_of_UpperLeftCorner x="-59.0" z="0.0" />
+		<!-- this is position in 3D world (Z and X coordinate) of object in top, left corner of minimap -->
+		<WorldSize x="114.5" z="65.5" />
+		<!-- this is size of minimap in 3D world units (size in Z and X coordinate) -->
+	</MiniMap>
+	
+	<MiniMapUseSelectableObjects/>
+	
+	<WorldMap>
+		<BaseWin name="WorldInfoWindow" type="TabsWindow" layoutFile="WorldInfoWindow.layout" />
+		<File group="WorldMaps" name="worldMap.xml" />
+		<ActionPosition x="18" y="116" />
+	</WorldMap>
+	
+	<ActorArriveFromWorldMapToScene/>
+	
+	<TextInfo>
+		<BaseWin name="WorldInfoWindow" type="TabsWindow" layoutFile="WorldInfoWindow.layout" />
+		<!--
+		<WinName>Name of BaseWin SubWin</WinName>
+		<WinLayout>layout filename for own window instead of BaseWin, to be used can't have BaseWin tag</WinLayout>
+		-->
+		<Content> <!-- full TextInfo save syntax is supported -->
+			<ReportsList>
+				<Report>
+					<name>html log</name>
+					<type>1</type>
+					<displayFromBack>1</displayFromBack>
+					<addToFront>1</addToFront>
+					<header>&lt;html&gt;&lt;body&gt;</header>
+					<footer>&lt;/html&gt;&lt;/body&gt;</footer>
+					<entries>
+						<item>&lt;h1&gt;Hello World 1 !!!&lt;/h1&gt;</item>
+						<item>[pagebreak]</item>
+						<item>&lt;h1&gt;Hello World 2 !!!&lt;/h1&gt;</item>
+						<item>[pagebreak]</item>
+						<item>&lt;h2&gt;AA AA&lt;/h2&gt;&lt;h3&gt;BB BB&lt;/h3&gt;</item>
+						<item>&lt;h4&gt;CC C&lt;/h4&gt;&lt;h3&gt;DD DD&lt;/h3&gt;</item>
+					</entries>
+				</Report>
+				<Report>
+					<name>txt log</name>
+					<entries>
+						<item>cdd[colour-modulate='false'][image-width='100'][aspect-lock='true'][image='minimap_test2.png']yyy[br]aa[image-width='100'][image-height='10000'][image='LoadingDemoMap.png'][reset='image'][br][br]BB[image='LoadingDemoMap.png']</item>
+						<item>[colour='ff00ff00']Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</item>
+						<item>tempor[colour='FFFF0000'] \[incididunt]ut [font='DejaVuMono-bold']labore[reset='full'] et dolore magna aliqua.</item>
+					</entries>
+				</Report>
+				<Report>
+					<name>url log</name>
+					<type>2</type>
+					<entries>
+						<item>http://www.opcode.eu.org/</item>
+						<item>[pagebreak]</item>
+						<item>https://www.ogre3d.org/</item>
+					</entries>
+				</Report>
+			</ReportsList>
+			<currentReportName>html log</currentReportName>
+		</Content>
+	</TextInfo>
+	
+	<TextMsgBar>
+		<ReportName>game log</ReportName>
+		<AutoHide>false</AutoHide>
+		<!--
+			<Refresh>200</Refresh>
+			<ExtraBufSize>0</ExtraBufSize>
+			<WinLayout>layout filename</WinLayout>
+		-->
+	</TextMsgBar>
+	
+	<TextDialog>
+		<ReportName>game log</ReportName>
+		<AutoHide>true</AutoHide>
+		<AutoPause>true</AutoPause>
+		<!-- <WinLayout>layout filename</WinLayout> -->
+	</TextDialog>
+	
+	<ContextMenu>
+		<TargetSelectionMarker markerType="OBBOX NO_THICKNESS CORNER_BOX" linesThickness="0">
+			<Color r="0.916" g="0.88" b="0.53" />
+		</TargetSelectionMarker>
+	</ContextMenu>
+	
+	<ActorInfo>
+		<ItemsFilter selectionMask="0x00" selectionMaskCompreValue="0x00">
+			<Filter propertyName="_type" valueType="String" condition="CONTAINS_WORD">IS_PERSON</Filter>
+		</ItemsFilter>
+	</ActorInfo>
+	<ActorsList>
+		<BaseWin name="WorldInfoWindow" type="TabsWindow" layoutFile="WorldInfoWindow.layout" />
+		<FilterA>
+			<ActorFilter selectionMask="0x20" selectionMaskCompreValue="0x00">
+				<Text>tests</Text>
+				<Text lang="pl">testowy</Text>
+				<Filter filterExpression="OR">
+					<Filter filterExpression="AND">
+						<Filter propertyName="_name" valueType="String" condition="EQUAL">wóz strażacki</Filter>
+						<Filter requiredComponents="World3D Health" requiredMode="any"/>
+					</Filter>
+					<Filter propertyName="_name" valueType="String" condition="EQUAL">radiowóz</Filter>
+					<Filter onOwnedObject="true" filterExpression="AND">
+						<Filter propertyName="_name"  valueType="Regex" condition="MATCH">.*strażak.*</Filter>
+						<Filter propertyName="status" valueType="int" condition="LESS">3</Filter>
+					</Filter>
+				</Filter>
+			</ActorFilter>
+			
+			<ActorFilter selectionMask="0x20" selectionMaskCompreValue="0x00">
+				<Text>police</Text>
+				<Filter propertyName="_type" valueType="String" condition="CONTAINS_WORD">IS_PD_TYPE</Filter>
+			</ActorFilter>
+			<ActorFilter selectionMask="0x20" selectionMaskCompreValue="0x00">
+				<Text>fire dept.</Text>
+				<Filter propertyName="_type" valueType="String" condition="CONTAINS_WORD">IS_FD_TYPE</Filter>
+			</ActorFilter>
+		</FilterA>
+		<FilterB>
+			<ActorFilter selectionMask="0x20" selectionMaskCompreValue="0x00">
+				<Text>person</Text>
+				<Text lang="pl">osoba</Text>
+				<Filter propertyName="_type" valueType="String" condition="CONTAINS_WORD">IS_PERSON</Filter>
+			</ActorFilter>
+			<ActorFilter selectionMask="0x20" selectionMaskCompreValue="0x00">
+				<Text>vehicle</Text>
+				<Text lang="pl">pojazd</Text>
+				<Filter propertyName="_type" valueType="String" condition="CONTAINS_WORD">IS_VEHICLE</Filter>
+			</ActorFilter>
+		</FilterB>
+	</ActorsList>
+	
+	<WebBrowser nodeName="BilboardScreen02" resX="1920" resY="1080" url="rpath://resources/SampleMod/Media/WebPages/test.html" />
+	<!-- <WebBrowser windowName="OgreTest" putOnWindow="WorldInfoWindow/OgreTest" resX="1024" resY="1024" url="rpath://resources0/test.html" /> -->
+	
+	<VNCclient nodeName="BilboardScreen03" host="localhost" screen="1" />
+	
+	<!-- SubView demo on CEGUI is created from script system ...
+	<SubView windowName="OgreTest" putOnWindow="WorldInfoWindow/OgreTest" resX="512" resY="512">
+		<Camera>
+			<Mode>
+				<RotationAllowed>1</RotationAllowed>
+				<MoveAllowed>1</MoveAllowed>
+				<LookOutside>0</LookOutside>
+			</Mode>
+			<Place>
+				<Position> <x>-11.5983</x> <y>0</y> <z>3.52944</z> </Position> 
+				<Orientation> <w>1</w> <x>0</x> <y>0</y> <z>0</z> </Orientation>
+				<Pitch> <rad>0.785</rad> </Pitch>
+			</Place>
+		</Camera>
+	</SubView>
+	-->
+	
+	<InitSceneObjects />
+</Mission>

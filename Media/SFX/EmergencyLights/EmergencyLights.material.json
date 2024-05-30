@@ -1,0 +1,170 @@
+{
+	"macroblocks" : {
+		"cull_none_macroblock" : {
+			"cull_mode" : "none"
+		}
+	},
+	"pbs" : {
+		"LightGlassScreen_Blue" : {
+			"macroblock" : "cull_none_macroblock",
+			"two_side": true,
+			"transparency" : {
+				"value" : 0.81,
+				"mode" : "Transparent"
+			},
+			"diffuse" : {
+				"value" : [0, 0, 0.8]
+			},
+			"specular" : {
+				"value" : [0, 0, 0.8]
+			},
+			"roughness" : {
+				"value" : 0.4
+			}
+		},
+		"LightGlassScreen_Red" : {
+			"macroblock" : "cull_none_macroblock",
+			"two_side": true,
+			"transparency" : {
+				"value" : 0.81,
+				"mode" : "Transparent"
+			},
+			"diffuse" : {
+				"value" : [0.7, 0, 0]
+			},
+			"specular" : {
+				"value" : [0.7, 0, 0]
+			},
+			"roughness" : {
+				"value" : 0.4
+			}
+		},
+		"LightGlassScreen_White" : {
+			"macroblock" : "cull_none_macroblock",
+			"two_side": true,
+			"transparency" : {
+				"value" : 0.81,
+				"mode" : "Transparent"
+			},
+			"diffuse" : {
+				"value" : [0.8, 0.8, 0.8]
+			},
+			"specular" : {
+				"value" : [0.8, 0.8, 0.8]
+			},
+			"roughness" : {
+				"value" : 0.4
+			}
+		},
+		"LightGlassScreen_Yellow" : {
+			"macroblock" : "cull_none_macroblock",
+			"two_side": true,
+			"transparency" : {
+				"value" : 0.81,
+				"mode" : "Transparent"
+			},
+			"diffuse" : {
+				"value" : [0.8, 0.75, 0]
+			},
+			"specular" : {
+				"value" : [0.8, 0.75, 0]
+			},
+			"roughness" : {
+				"value" : 0.4
+			}
+		},
+		"LightGlassScreen_Orange" : {
+			"macroblock" : "cull_none_macroblock",
+			"two_side": true,
+			"transparency" : {
+				"value" : 0.81,
+				"mode" : "Transparent"
+			},
+			"diffuse" : {
+				"value" : [0.8, 0.3, 0]
+			},
+			"specular" : {
+				"value" : [0.8, 0.3, 0]
+			},
+			"roughness" : {
+				"value" : 0.4
+			}
+		},
+		"LightGlassScreen_Green" : {
+			"macroblock" : "cull_none_macroblock",
+			"two_side": true,
+			"transparency" : {
+				"value" : 0.81,
+				"mode" : "Transparent"
+			},
+			"diffuse" : {
+				"value" : [0, 0.4, 0]
+			},
+			"specular" : {
+				"value" : [0, 0.4, 0]
+			},
+			"roughness" : {
+				"value" : 0.4
+			}
+		},
+		
+		
+		"LightSource_Blue" : {
+			"shadow_const_bias" : 0.01,
+			"transparency" : {
+				"value" : 0.94,
+				"mode" : "Transparent"
+			},
+			"diffuse" : {
+				"value" : [0, 0, 1]
+			},
+			"specular" : {
+				"value" : [0, 0, 0]
+			},
+			"emissive" : {
+				"value" : [0, 0, 0]
+			},
+			"roughness" : {
+				"value" : 0.4
+			}
+		},
+		"LightSource_Red" : {
+			"shadow_const_bias" : 0.01,
+			"transparency" : {
+				"value" : 0.94,
+				"mode" : "Transparent"
+			},
+			"diffuse" : {
+				"value" : [1, 0, 0]
+			},
+			"specular" : {
+				"value" : [0, 0, 0]
+			},
+			"emissive" : {
+				"value" : [0, 0, 0]
+			},
+			"roughness" : {
+				"value" : 0.4
+			}
+		},
+		"LightSource_White" : {
+			"shadow_const_bias" : 0.01,
+			"transparency" : {
+				"value" : 0.94,
+				"mode" : "Transparent"
+			},
+			"diffuse" : {
+				"value" : [1, 1, 1]
+			},
+			"specular" : {
+				"value" : [0, 0, 0]
+			},
+			"emissive" : {
+				"value" : [0, 0, 0]
+			},
+			"roughness" : {
+				"value" : 0.4
+			}
+		}
+	}
+}

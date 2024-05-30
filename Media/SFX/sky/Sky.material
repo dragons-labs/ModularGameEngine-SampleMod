@@ -1,0 +1,18 @@
+import * from "SkyPostprocess.material"
+
+material SkyPostprocessViolentdays {
+	technique {
+		pass {
+			depth_check           on
+			depth_write           off
+			cull_hardware         none
+			vertex_program_ref    SkyPostprocess_vs { }
+			fragment_program_ref  SkyPostprocess_ps { }
+			texture_unit {
+				texture           violentdays.jpg cubic gamma // cubemaps texture
+				filtering         trilinear
+				tex_address_mode  clamp
+			}
+		}
+	}
+}

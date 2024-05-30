@@ -1,0 +1,10 @@
+Actions/
+ActorsConfig/
+Maps/
+WorldMaps/
+*.xml
+	Author:  Robert Paciorek, DGE Project
+	Licence: MIT
+
+Media/
+	See: COPYRIGHT.txt in subdirs of Media

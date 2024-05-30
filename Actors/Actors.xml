@@ -1,0 +1,83 @@
+<Prototypes>
+	<ActorPrototype name="PoliceCar_A">
+		<!-- properties for actor info in multiple places: world map bases, acttor info widnows, units list window, ... -->
+		<Property name="_code" type="String"><value>P101</value></Property>
+		<Property name="_name" type="String">
+			<G11n lang="pl"><value>radiowóz X</value></G11n>
+			<G11n lang="en"><value>police car</value></G11n>
+		</Property>
+		<Property name="_desc" type="String"><value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut metus ipsum. Donec scelerisque nunc nunc, nec auctor neque pretium sed. Phasellus finibus est eget ante congue, ut dignissim purus sollicitudin. Sed eu velit consectetur, sagittis diam sed, vehicula lacus. Maecenas tristique id tellus aliquam venenatis. Duis rhoncus id mauris a fringilla. Aenean eget pharetra augue. Etiam convallis orci ac tellus cursus, non pretium velit tincidunt. Pellentesque vel accumsan lectus, eu interdum nulla. Nullam eget egestas magna.</value></Property>
+		<Property name="_img"  type="String"><value>b.png</value></Property>
+		<Property name="_type" type="String"><value>IS_VEHICLE IS_PD_TYPE</value></Property> <!-- used in: map config → <ActorInfo> / <ActorsList> → <Filter> -->
+		
+		<Property name="PosiblePersonel" type="ListOfStr">
+			<item>name="Fireman" file="Actors.xml" group="ActorsConfig"</item>
+		</Property>
+		
+		<!-- properties for world map moving -->
+		<Property name="WorldMapSpeed"   type="float"><value>17.0</value></Property>
+		<Property name="PersonelSpace"   type="int"><value>13</value></Property>
+		
+		<!-- properties for exit personel actions -->
+		<Property name="ExitPointOffset" type="Vector3"><value><x>3</x><y>0</y><z>1</z></value></Property>
+		
+		<!-- list of actions ... for details see file listed in <Actions> in map config file -->
+		<Property name="PosibleActions" type="ListOfStr">
+			<item>GOTO</item>
+			<item>lightControl</item>
+			<item>soundControl</item>
+		</Property>
+		
+		<!-- list of actor components -->
+		<ActorComponents>
+			<Component classID="SelectableObject">
+				<SelectionMask>IS_SELECTABLE</SelectionMask>
+				<MiniMapSymbol width="3" height="3">
+					ff00 ff00 ff00
+					ff00 ffff ff00
+					ff00 ff00 ff00
+				</MiniMapSymbol>
+			</Component>
+			<Component classID="World3DMovable">
+				<SubType>IS_OFFROAD_TRUCK</SubType>
+			</Component>
+			<Component classID="Health" />
+			<Component classID="Sound">
+				<sound name="s1" loop="true" autoPlay="false" playOnMoving="true" filename="fire_alarm.ogg"/>
+			</Component>
+		</ActorComponents>
+		
+		<!-- actor 3D objects, scale is optional ... -->
+		<scale x="1.5" y="1.2" z="1.2" />
+		<item meshFile="Vehicles/Hummer.mesh" />
+	</ActorPrototype>
+	
+	<ActorPrototype name="Fireman">
+		<Property name="_code" type="String"><value>XYZ 1</value></Property>
+		<Property name="_name" type="String"><value>Person</value></Property>
+		<Property name="_desc" type="String"><value>Etiam elementum dolor quis mollis blandit. Proin ultricies sapien fringilla semper pellentesque. Mauris ut cursus sem. Sed convallis libero magna, at vulputate turpis imperdiet dictum. Integer aliquet magna accumsan nisi fermentum, vitae fermentum arcu facilisis. Ut eleifend dui non risus pulvinar facilisis. Nullam vestibulum, nisl gravida dapibus ornare, est libero ullamcorper sapien, ut faucibus dolor mi in elit. Curabitur id justo in elit bibendum placerat quis non ligula. Phasellus accumsan id lacus vestibulum aliquet. Suspendisse purus velit, laoreet sed volutpat sit amet, dignissim eu dolor. </value></Property>
+		<Property name="_img"  type="String"><value>a.png</value></Property>
+		<Property name="_type" type="String"><value>IS_PERSON IS_FD_TYPE</value></Property> <!-- used in: map config → <ActorInfo> / <ActorsList> → <Filter> -->
+		
+		<Property name="PosibleActions" type="ListOfStr">
+			<item>GOTO</item>
+		</Property>
+		
+		<ActorComponents>
+			<Component classID="SelectableObject">
+				<SelectionMask>IS_SELECTABLE</SelectionMask>
+				<MiniMapSymbol width="3" height="3">
+					ff00 ff00 ff00
+					ff00 ffff ff00
+					ff00 ff00 ff00
+				</MiniMapSymbol>
+			</Component>
+			<Component classID="World3DMovable" />
+			<Component classID="Health" />
+		</ActorComponents>
+		
+		<item meshFile="Cube_1x1x1.mesh">
+			<animations />
+		</item>
+	</ActorPrototype>
+</Prototypes>

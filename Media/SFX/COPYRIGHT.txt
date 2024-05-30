@@ -1,0 +1,32 @@
+Media/SFX/particles/fire.particle
+	Author:  Robert Paciorek, MGE Project
+	Licence: MIT
+	Comment: inspirited by / based on: "TRPlayer/Torch" by epopov from https://forums.ogre3d.org/viewtopic.php?p=52675#p52675
+
+Media/SFX/particles/Examples-Water.particle
+Media/SFX/particles/Examples.particle
+Media/SFX/particles/emitted_emitter.particle
+Media/SFX/particles/smoke.particle
+Media/SFX/textures/flare.png
+Media/SFX/textures/smoke.png
+Media/SFX/textures/smokecolors.png
+	Source:  http://www.ogre3d.org/
+	Author:  Torus Knot Software Ltd
+	Licence: MIT
+
+Media/SFX/textures/flare2.png
+	Source:  (edited version of flare.png from) http://www.ogre3d.org/
+	Author:  Torus Knot Software Ltd
+	Licence: MIT
+	Comment: modify and convert by Robert Paciorek for MGE Project
+
+Media/SFX/particles/particle.material
+Media/SFX/EmergencyLights/*
+	Author:  Robert Paciorek, MGE Project
+	Licence: MIT
+
+Media/SFX/sky/violentdays_*.jpg
+	Source:  http://www.zfight.com/misc/files/textures/envmap_violentdays.rar
+	Author:  Jockum Skoglund aka hipshot (www.zfight.com)
+	Licence: CC-BY like: "Modify however you like, just cred me for my work, maybe link to my page."
+	Comment: convert by Robert Paciorek for MGE Project

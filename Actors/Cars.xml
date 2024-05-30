@@ -1,0 +1,49 @@
+<Prototypes>
+	<ActorPrototype name="JeepCar">
+		<ActorComponents>
+			<Component classID="Car">
+				<vehicle />
+				<wheel onNode="car_w1" suspensionRestLength="0.55" radius="0.5" isFront="true" />
+				<wheel onNode="car_w2" suspensionRestLength="0.55" radius="0.5" isFront="true" />
+				<wheel onNode="car_w3" suspensionRestLength="0.55" radius="0.5" isFront="false" />
+				<wheel onNode="car_w4" suspensionRestLength="0.55" radius="0.5" isFront="false" />
+			</Component>
+			<Component classID="SelectableObject">
+				<SelectionMask>IS_SELECTABLE</SelectionMask>
+				<MiniMapSymbol width="3" height="3">
+					f0f0 f0f0 f0f0
+					f0f0 f0f0 f0f0
+					f0f0 f0f0 f0f0
+				</MiniMapSymbol>
+			</Component>
+		</ActorComponents>
+		
+		<Property name="PosibleActions" type="ListOfStr">
+			<item>setControllable</item>
+			<item>unsetControllable</item>
+			<item>makeOwnerOfCamera</item>
+		</Property>
+		
+		<scale x="1.000000" y="1.000000" z="1.000000" />
+		<item meshFile="Vehicles/Jeep.mesh">
+			<physics physicsMode="full" shapeMode="box" mass="2500" />
+		</item>
+		
+		<node name="car_w1">
+			<position x="-0.88" y="0.3" z="-0.65" />
+			<item meshFile="Vehicles/Jeep-wheel.mesh" />
+		</node>
+		<node name="car_w2">
+			<position x="0.88" y="0.3" z="-0.65" />
+			<item meshFile="Vehicles/Jeep-wheel.mesh" />
+		</node>
+		<node name="car_w3">
+			<position x="0.88" y="0.3" z="1.75" />
+			<item meshFile="Vehicles/Jeep-wheel.mesh" />
+		</node>
+		<node name="car_w4">
+			<position x="-0.88" y="0.3" z="1.75" />
+			<item meshFile="Vehicles/Jeep-wheel.mesh" />
+		</node>
+	</ActorPrototype>
+</Prototypes>

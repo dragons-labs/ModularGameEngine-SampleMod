@@ -1,0 +1,10 @@
+<Actions>
+	<!-- demo actions -->
+	<Action name="getArea" type="RUN_SCRIPT" needMask="AREA" />
+	<Action name="getLine" type="RUN_SCRIPT" needMask="POLYGONAL_CHAIN" />
+	<Action name="getTargetActors" type="RUN_SCRIPT" needMask="TARGET_ACTOR" />
+	<Action name="getStandardActors" type="RUN_SCRIPT" needMask="SELECTABLE_ACTOR" />
+	<Action name="getAreaAndActors" type="RUN_SCRIPT" needMask="TARGET_ACTOR AREA" />
+	<Action name="isFreePath" type="RUN_SCRIPT" needMask="POINT" />
+	<Action name="loopTest" scriptOnStart="loopTestStart" scriptOnEnd="loopTestEnd" type="RUN_SCRIPT" needMask="NONE" />
+</Actions>

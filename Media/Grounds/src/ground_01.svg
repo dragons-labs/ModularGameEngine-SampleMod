@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="4000"
+   height="4000"
+   viewBox="0 0 999.99998 1000"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="ground_01.svg"
+   inkscape:export-filename="../ground_01.svg.png"
+   inkscape:export-xdpi="49.152"
+   inkscape:export-ydpi="49.152">
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs5">
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="256"
+       height="256"
+       patternTransform="matrix(0.26458333,0,0,0.26458333,-122.88193,9.2579269)"
+       id="road_texture_1.pattern">
+      <image
+         sodipodi:absref="./road_asphalt_small.png"
+         xlink:href="road_asphalt_small.png"
+         y="0"
+         x="0"
+         id="road_texture_1.image"
+         style="stroke-width:3.96571469;image-rendering:optimizeQuality"
+         preserveAspectRatio="none"
+         height="256"
+         width="256" />
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="256"
+       height="256"
+       patternTransform="matrix(0.68499714,0,0,0.67185921,-122.88193,77.576836)"
+       id="grass_texture_1.pattern">
+      <image
+         sodipodi:absref="./ground_grass_gen_07.png"
+         xlink:href="ground_grass_gen_07.png"
+         inkscape:label="#grass_texture_1"
+         width="256"
+         height="256"
+         preserveAspectRatio="none"
+         style="display:inline;stroke-width:3.96571517;image-rendering:optimizeQuality"
+         id="grass_texture_1"
+         x="0"
+         y="0" />
+    </pattern>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     id="namedview3"
+     showgrid="false"
+     inkscape:zoom="0.074331525"
+     inkscape:cx="4380.0774"
+     inkscape:cy="1312.4122"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer3"
+     units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <g
+     inkscape:groupmode="layer"
+     id="patterns_layer1"
+     inkscape:label="patterns"
+     style="display:inline"
+     transform="translate(0,4.2e-5)">
+    <rect
+       style="fill:url(#road_texture_1.pattern);stroke:none"
+       width="68.318909"
+       height="68.318909"
+       x="-122.88193"
+       y="13.257927"
+       id="road_texture_1.base" />
+    <rect
+       style="fill:url(#grass_texture_1.pattern);fill-opacity:1;stroke:none"
+       width="68.318909"
+       height="68.318909"
+       x="-122.88193"
+       y="81.576836"
+       id="rect1602" />
+    <g
+       transform="translate(0,-5e-6)"
+       style="display:inline"
+       id="g837">
+      <rect
+         y="155.32486"
+         x="-115.17809"
+         height="12.5"
+         width="25"
+         id="rect1553"
+         style="opacity:1;fill-opacity:1;fill-rule:evenodd;stroke-width:0.26458332" />
+      <text
+         id="text832"
+         y="163.15225"
+         x="-110.95332"
+         style="font-style:normal;font-weight:normal;font-size:13.33333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.25"
+         xml:space="preserve"><tspan
+           style="font-size:4.33333349px;fill:#ffffff;stroke-width:0.25"
+           y="163.15225"
+           x="-110.95332"
+           id="tspan830"
+           sodipodi:role="line">1x0.5m</tspan></text>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="grass"
+     transform="translate(0,4.2e-5)">
+    <g
+       id="grass.group"
+       inkscape:label="grass.group"
+       style="display:inline;fill:url(#grass_texture_1.pattern);fill-opacity:1;stroke-width:2"
+       transform="matrix(0.5,0,0,0.5,0,-3.4e-5)">
+      <rect
+         y="0"
+         x="0"
+         height="2000"
+         width="2000"
+         id="rect867"
+         style="opacity:1;fill:url(#grass_texture_1.pattern);fill-opacity:1;fill-rule:evenodd;stroke-width:2" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="roads"
+     style="display:inline"
+     transform="translate(0,627.48041)">
+    <g
+       id="roads.group"
+       style="fill:none;fill-opacity:1;stroke:url(#road_texture_1.pattern)"
+       inkscape:label="roads.group"
+       transform="translate(472.01657,54.436916)">
+      <path
+         style="fill:none;fill-opacity:1;stroke:url(#road_texture_1.pattern);stroke-width:75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 35.359532,-417.50472 c 0,0 -40.2431718,1.33004 -70.2757,-0.56372 -42.271975,-2.66552 -139.337602,0.81711 -179.359862,22.60451 -63.59299,34.95678 -89.88058,59.47325 -124.04894,100.83956 -18.5832,22.61593 -22.70235,57.59669 -22.70235,57.59669"
+         id="path1557"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="csccc" />
+      <path
+         style="display:inline;fill:none;fill-opacity:1;stroke:url(#road_texture_1.pattern);stroke-width:150;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 102.98343,-681.91733 v 869.4317 0 130.5683"
+         id="path1574-5"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccc" />
+      <path
+         style="display:inline;fill:none;fill-opacity:1;stroke:url(#road_texture_1.pattern);stroke-width:150;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 172.64228,174.82688 h 355.34115 v 0"
+         id="path1574-5-7"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccc" />
+    </g>
+    <path
+       style="display:inline;fill:#ff0000;fill-opacity:1;stroke:#ffffff;stroke-width:3.74999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:29.99999919, 29.99999919;stroke-dashoffset:0;stroke-opacity:0.8538813"
+       d="m 575.125,-627.48039 v 870.32551 0 130.70253"
+       id="path1574"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="display:inline;fill:url(#ff0000);fill-opacity:1;stroke:#ffffff;stroke-width:3.74999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:29.99999936, 29.99999936;stroke-dashoffset:0;stroke-opacity:0.8538813"
+       d="m 657.60911,229.2638 h 297.64224 v 0 h 44.6989"
+       id="path1574-56"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+  </g>
+</svg>

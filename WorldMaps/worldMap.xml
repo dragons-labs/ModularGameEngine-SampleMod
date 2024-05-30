@@ -1,0 +1,10 @@
+<worldMap width="256" height="128" roadsFileName="worldMap.roads.png" roadsGroup="WorldMaps" defaultImagesGroup="UnitsImages">
+	<mapImage file="worldMap.png" group="WorldMaps" />
+	
+	<base x="62" y="38" infoA="base 1" infoB="RockRiver City" infoC="CODE: 81-pd1-367">
+		<unit name="PoliceCar_A" file="Actors.xml" group="ActorsConfig" quantity="2" />
+	</base>
+	
+	<base x="203" y="111" infoA="base 2" infoB="RockRiver City" infoC="CODE: 32-resq1-815">
+	</base>
+</worldMap>
